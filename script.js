@@ -34,23 +34,28 @@ let orden = (array) => {
 
 orden(arrayName);
 
-//Ejercicio 04: Crea una función flecha en JS que dada una palabra intercale los caracteres de la misma entre mayúsculas y minúsculas (por ejemplo: "Hola" sería "hOlA").
+//Ejercicio 03: Crea una función flecha en JS que dada una palabra intercale los caracteres de la misma entre mayúsculas y minúsculas (por ejemplo: "Hola" sería "hOlA").
 
-let word = "Jessica";
+let word = "unicornio";
 let character = "";
 let newWord = "";
 
 let ordenWord = () => {
-  for (let i = ""; i < word.length; i++) {
-    if (i % 2 === 0 || i === 1) {
-      character = word[i];
-      console.log(character);
+  for (let i = "0"; i < word.length; i++) {
+    character = word[i];
+
+    if (i % 2 === 0 || i === 0) {
+      newWord = newWord + character;
+    } else {
+      character = character.toUpperCase();
+      newWord = newWord + character;
     }
   }
+  console.log(newWord);
 };
 ordenWord(word);
 
-//Ejercicio 05: Crear una función flecha en JS que sea capaz de sumar los valores númericos de los elementos con mismo índice dados dos Arrays (por ejemplo: [1, 2, 3, 4, 5] + [2, 3, 4, 5, 6] = [3, 5, 7, 9, 11]).
+//Ejercicio 04: Crear una función flecha en JS que sea capaz de sumar los valores númericos de los elementos con mismo índice dados dos Arrays (por ejemplo: [1, 2, 3, 4, 5] + [2, 3, 4, 5, 6] = [3, 5, 7, 9, 11]).
 
 let array01 = [2, 3, 4, 5, 8];
 let array02 = [7, 8, 9, 10, 11];
