@@ -1,15 +1,30 @@
 // Ejercicio 01: Crea una función flecha en JS que obtenga el elemento más frecuente en un Array.
 let arrayNum = [2, 5, 6, 7, 10, 34, 22, 1, 2, 4, 6, 6, 34, 22, 10, 22, 34, 22];
-let itemMax = 0;
-let actual = 0;
+let itemMax = null;
+let actual = null;
 let suma = 0;
+let maxNum = 0;
 
 let repeatNum = (arrayX) => {
   arrayX.sort().forEach((num) => {
-    if (num !== null) {
+    if (actual === null) {
+      actual = num;
+      suma = 1;
+    } else if (actual === num) {
+      actual = num;
+      suma += 1;
+      if (suma > maxNum) {
+        maxNum = suma;
+        itemMax = actual;
+      }
+    } else {
+      suma = 1;
       actual = num;
     }
   });
+  console.log(
+    `El elemento más repetido es: ${itemMax} con ${maxNum} repeticiones`
+  );
 };
 
 repeatNum(arrayNum);
